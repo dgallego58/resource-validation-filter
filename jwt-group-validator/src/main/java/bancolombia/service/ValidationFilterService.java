@@ -1,16 +1,16 @@
-package co.com.bancolombia.service;
+package bancolombia.service;
 
-import co.com.bancolombia.bd.BDSimulatorService;
-import co.com.bancolombia.user.User;
+import bancolombia.bd.DataBaseEmulator;
+import bancolombia.user.User;
 
 import java.util.UUID;
 
 public class ValidationFilterService {
 
-    private final BDSimulatorService myRepo;
+    private final DataBaseEmulator myRepo;
 
     private ValidationFilterService() {
-        this.myRepo = BDSimulatorService.INSTANCE;
+        this.myRepo = DataBaseEmulator.INSTANCE;
     }
 
     public static ValidationFilterService createDefault() {

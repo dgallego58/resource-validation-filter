@@ -1,21 +1,20 @@
-package co.com.bancolombia.user;
+package bancolombia.user;
 
+import bancolombia.properties.GroupPath;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
-import java.util.Set;
 import java.util.UUID;
 
 @Getter
 @Setter
 @Accessors(chain = true)
 @NoArgsConstructor(staticName = "create")
-public class User extends BaseEntity<UUID> {
+public class Role extends BaseEntity<UUID> {
 
     private UUID id;
-    private String name;
-    private Set<Role> roles;
+    private GroupPath.GroupType name;
 
 }

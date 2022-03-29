@@ -1,14 +1,14 @@
-package co.com.bancolombia.bd;
+package bancolombia.bd;
 
-import co.com.bancolombia.user.BaseEntity;
-import co.com.bancolombia.user.Identifiable;
+import bancolombia.user.BaseEntity;
+import bancolombia.user.Identifiable;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 
-public enum BDSimulatorService {
+public enum DataBaseEmulator {
 
     INSTANCE("memory") {
         @Override
@@ -25,7 +25,7 @@ public enum BDSimulatorService {
     private final Map<String, ? super Identifiable<? extends Serializable, ? extends BaseEntity>> collector;
     private final String bdType;
 
-    BDSimulatorService(String bdType) {
+    DataBaseEmulator(String bdType) {
         this.bdType = bdType;
         this.collector = new HashMap<>();
     }

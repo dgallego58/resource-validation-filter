@@ -1,6 +1,6 @@
-package co.com.bancolombia.properties;
+package bancolombia.properties;
 
-import co.com.bancolombia.util.JacksonUtil;
+import bancolombia.util.JacksonUtil;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.extern.jackson.Jacksonized;

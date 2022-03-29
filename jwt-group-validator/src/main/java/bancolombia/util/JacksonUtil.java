@@ -1,4 +1,4 @@
-package co.com.bancolombia.util;
+package bancolombia.util;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;

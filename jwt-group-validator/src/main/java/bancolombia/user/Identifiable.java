@@ -1,4 +1,4 @@
-package co.com.bancolombia.user;
+package bancolombia.user;
 
 import java.io.Serializable;
 

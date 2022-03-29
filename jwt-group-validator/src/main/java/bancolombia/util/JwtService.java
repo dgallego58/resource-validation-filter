@@ -1,4 +1,4 @@
-package co.com.bancolombia.util;
+package bancolombia.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
@@ -38,7 +38,9 @@ public class JwtService<T> {
     }
 
     public String decompose() {
-        return Arrays.stream(token.split("\\.")).limit(TWO_PARTS).collect(Collectors.joining(".", "", "."));
+        return Arrays.stream(token.split("\\."))
+                     .limit(TWO_PARTS)
+                     .collect(Collectors.joining(".", "", "."));
     }
 
     public Map<String, Object> bodyAsMap() {

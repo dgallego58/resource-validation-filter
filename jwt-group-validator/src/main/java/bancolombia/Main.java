@@ -1,11 +1,11 @@
-package co.com.bancolombia;
+package bancolombia;
 
-import co.com.bancolombia.bd.BDSimulatorService;
-import co.com.bancolombia.properties.GroupPath;
-import co.com.bancolombia.service.ValidationFilterService;
-import co.com.bancolombia.user.Role;
-import co.com.bancolombia.user.User;
-import co.com.bancolombia.util.JwtService;
+import bancolombia.bd.DataBaseEmulator;
+import bancolombia.properties.GroupPath;
+import bancolombia.service.ValidationFilterService;
+import bancolombia.user.Role;
+import bancolombia.user.User;
+import bancolombia.util.JwtService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -50,7 +50,7 @@ public class Main {
         bdService.save(userA);
         bdService.save(userB);
 
-        BDSimulatorService instance = BDSimulatorService.INSTANCE;
+        DataBaseEmulator instance = DataBaseEmulator.INSTANCE;
         log.info("Print DB {}", instance.getCollector());
 
         var pinnedUser = bdService.findBy(userA.getId());
