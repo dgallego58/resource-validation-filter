@@ -1,0 +1,13 @@
+{
+  "groupPaths": {
+    "ADMIN": [
+      "/creation/**",
+      "/deletion"
+    ],
+    "COMERCIAL": [
+      "/download/{reports}/**",
+      "/check-active-users",
+      "/creation/**"
+    ]
+  }
+}
