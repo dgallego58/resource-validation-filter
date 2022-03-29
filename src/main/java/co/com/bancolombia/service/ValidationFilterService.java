@@ -9,8 +9,12 @@ public class ValidationFilterService {
 
     private final BDSimulatorService myRepo;
 
-    public ValidationFilterService() {
+    private ValidationFilterService() {
         this.myRepo = BDSimulatorService.INSTANCE;
+    }
+
+    public static ValidationFilterService createDefault() {
+        return new ValidationFilterService();
     }
 
     public User findBy(UUID id) {

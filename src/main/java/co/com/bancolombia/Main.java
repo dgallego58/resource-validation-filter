@@ -46,7 +46,7 @@ public class Main {
                                               .setId(UUID.randomUUID()))
                          );
 
-        var bdService = new ValidationFilterService();
+        var bdService = ValidationFilterService.createDefault();
         bdService.save(userA);
         bdService.save(userB);
 
