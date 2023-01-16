@@ -2,12 +2,16 @@ plugins {
     id 'project.java-conventions'
 }
 
-
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+jar {
+    from('src/main/resources') {
+        include '**/*.properties'
+        include '**/*.xml'
+        include '**/*.css'
+        include '**/*.json'
+        include '**/*.yml'
+    }
+}
+tasks.withType(Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
-test {
-    useJUnitPlatform()
-}

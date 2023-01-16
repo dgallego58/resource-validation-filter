@@ -1,6 +1,8 @@
 plugins {
     id 'java-library'
     id 'java'
+    id 'jacoco'
+    id 'idea'
 }
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -13,33 +15,38 @@ repositories {
 tasks.named('test') {
     useJUnitPlatform()
 }
-jar {
-    from('src/main/resources') {
-        include '**/*.properties'
-        include '**/*.xml'
-        include '**/*.css'
-        include '**/*.json'
-        include '**/*.yml'
-    }
+
+idea.module {
+    downloadJavadoc = true
+    downloadSources = true
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.22'
-    annotationProcessor 'org.projectlombok:lombok:1.18.22'
-    testCompileOnly 'org.projectlombok:lombok:1.18.22'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
-    implementation 'gradle.plugin.com.github.spotbugs.snom:spotbugs-gradle-plugin:4.7.2'
-    implementation 'org.springframework:spring-web:5.3.17'
-    implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
-    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
-    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
-    implementation 'ch.qos.logback:logback-classic:1.2.11'
-    implementation platform('com.fasterxml.jackson:jackson-bom:2.+')
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    implementation 'gradle.plugin.com.github.spotbugs.snom:spotbugs-gradle-plugin:4.7.5'
+    implementation 'org.springframework:spring-web:5.3.24'
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    implementation 'ch.qos.logback:logback-classic:1.4.5'
+    implementation platform('com.fasterxml.jackson:jackson-bom:2.14.0')
     implementation 'com.fasterxml.jackson.core:jackson-core'
     implementation 'com.fasterxml.jackson.core:jackson-annotations'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8'
     implementation 'com.fasterxml.jackson.module:jackson-module-parameter-names'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 }
+
+
+test {
+    testLogging {
+        events "started", "skipped", "failed", "passed"
+        exceptionFormat "short"
+    }
+}
+

@@ -13,16 +13,16 @@ public enum DataBaseEmulator {
     INSTANCE("memory") {
         @Override
         public <T extends Serializable, E extends BaseEntity<T>> E save(E entity) {
-            return (E) getCollector().put(entity.getId().toString(), entity);
+            return (E) getCollector().put(entity.getId(), entity);
         }
 
         @Override
         public <T extends Serializable, E extends BaseEntity<T>> E findById(T entityId) {
-            return (E) getCollector().get(entityId.toString());
+            return (E) getCollector().get(entityId);
         }
     };
 
-    private final Map<String, ? super Identifiable<? extends Serializable, ? extends BaseEntity>> collector;
+    private final Map<? super Serializable, ? super Identifiable<? extends Serializable, ? extends BaseEntity>> collector;
     private final String bdType;
 
     DataBaseEmulator(String bdType) {
@@ -30,12 +30,16 @@ public enum DataBaseEmulator {
         this.collector = new HashMap<>();
     }
 
+    public String getBdType() {
+        return bdType;
+    }
+
     public abstract <T extends Serializable, E extends BaseEntity<T>> E save(E entity);
 
     public abstract <T extends Serializable, E extends BaseEntity<T>> E findById(T entityId);
 
 
-    public Map<String, ? super Identifiable<? extends Serializable, ? extends BaseEntity>> getCollector() {
+    public Map<? super Serializable, ? super Identifiable<? extends Serializable, ? extends BaseEntity>> getCollector() {
         return collector;
     }
 }

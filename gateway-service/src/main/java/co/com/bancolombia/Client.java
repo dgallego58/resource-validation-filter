@@ -1,4 +1,4 @@
-package bancolombia;
+package co.com.bancolombia;
 
 import bancolombia.bd.DataBaseEmulator;
 import bancolombia.properties.GroupPath;
@@ -16,9 +16,9 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.UUID;
 
-public class Main {
+public class Client {
 
-    private static final Logger log = LoggerFactory.getLogger(Main.class);
+    private static final Logger log = LoggerFactory.getLogger(Client.class);
 
     public static void main(String[] args) {
 
@@ -68,7 +68,7 @@ public class Main {
         var userBFromDb = bdService.findBy(UUID.fromString(userIdB));
         var userGroupsOfB = userBFromDb.getRoles().stream().map(Role::getName).toList();
         var dataForB = groupPath.isSecuredForRoles(userGroupsOfB, requestPath);
-        log.info("SHOULD BE PASSED THROUGH SERVICE FOR B? {}", dataForB ? "YES" : "NO");
+        log.info("IT SHOULD BE PASSED THROUGH SERVICE FOR B? {}", dataForB ? "YES" : "NO");
 
         // ------------- FOR C being a SUPER USER HE HAS ROLES COMERCIAL AND ADMIN SHOULD BE PERMITTED
 
@@ -106,4 +106,5 @@ public class Main {
         log.info("{}", signedUser.getId());
         return signedUser.getId().toString();
     }
+
 }
