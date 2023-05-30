@@ -12,6 +12,8 @@ import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.UUID;
@@ -91,6 +93,14 @@ public class Main {
         var userGroupsOfC = userCFromDb.getRoles().stream().map(Role::getName).toList();
         var dataForC = groupPath.isSecuredForRoles(userGroupsOfC, requestPath);
         log.info("SHOULD BE PASSED THROUGH SERVICE FOR C? {}", dataForC ? "YES" : "NO");
+
+
+        log.info("READ SIGNATURE FILE");
+
+        var f = new File(URI.create("C:/Users/PC/Downloads/somepdf.pdf"));
+        bdService.checkFile(f);
+        var anotherFile = new File(URI.create("C:/Users/PC/Downloads/pdf_but_image.jpg"));
+        bdService.checkFile(anotherFile);
     }
 
 
