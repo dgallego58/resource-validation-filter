@@ -1,6 +1,6 @@
-package co.com.bancolombia;
+package co.com.dgallego58;
 
-import bancolombia.properties.GroupPath;
+import co.com.dgallego58.properties.GroupPath;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

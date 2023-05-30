@@ -1,6 +1,6 @@
-package bancolombia.user;
+package co.com.dgallego58.user;
 
-import bancolombia.properties.GroupPath;
+import co.com.dgallego58.properties.GroupPath;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

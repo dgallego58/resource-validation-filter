@@ -1,4 +1,4 @@
-package bancolombia.service;
+package co.com.dgallego58.service;
 
 public class StringUtil {
 

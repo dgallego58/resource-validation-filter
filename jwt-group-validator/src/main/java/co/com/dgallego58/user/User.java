@@ -1,4 +1,4 @@
-package bancolombia.user;
+package co.com.dgallego58.user;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

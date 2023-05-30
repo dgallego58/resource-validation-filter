@@ -1,4 +1,4 @@
-package bancolombia.util;
+package co.com.dgallego58.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;

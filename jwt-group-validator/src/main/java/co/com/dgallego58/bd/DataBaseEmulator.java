@@ -1,7 +1,7 @@
-package bancolombia.bd;
+package co.com.dgallego58.bd;
 
-import bancolombia.user.BaseEntity;
-import bancolombia.user.Identifiable;
+import co.com.dgallego58.user.BaseEntity;
+import co.com.dgallego58.user.Identifiable;
 
 import java.io.Serializable;
 import java.util.HashMap;

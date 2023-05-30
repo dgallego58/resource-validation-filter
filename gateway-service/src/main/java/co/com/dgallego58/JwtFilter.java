@@ -1,7 +1,7 @@
-package co.com.bancolombia;
+package co.com.dgallego58;
 
 
-import bancolombia.properties.GroupPath;
+import co.com.dgallego58.properties.GroupPath;
 
 import java.util.List;
 

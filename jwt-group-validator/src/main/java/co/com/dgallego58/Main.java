@@ -1,11 +1,11 @@
-package bancolombia;
+package co.com.dgallego58;
 
-import bancolombia.bd.DataBaseEmulator;
-import bancolombia.properties.GroupPath;
-import bancolombia.service.ValidationFilterService;
-import bancolombia.user.Role;
-import bancolombia.user.User;
-import bancolombia.util.JwtService;
+import co.com.dgallego58.bd.DataBaseEmulator;
+import co.com.dgallego58.properties.GroupPath;
+import co.com.dgallego58.service.ValidationFilterService;
+import co.com.dgallego58.user.Role;
+import co.com.dgallego58.user.User;
+import co.com.dgallego58.util.JwtService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
